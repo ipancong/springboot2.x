@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Entity(name = "t_student")
 @Data
 @NoArgsConstructor
-@ToString
+@ToString(exclude = {"clazz"})
 public class Student {
 
     public Student(String name, String age){

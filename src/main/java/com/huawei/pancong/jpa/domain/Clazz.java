@@ -14,7 +14,6 @@ import java.util.List;
 @Entity(name = "t_clazz")
 @Data
 @NoArgsConstructor
-@ToString
 public class Clazz {
 
     public Clazz(String name){
@@ -31,6 +30,6 @@ public class Clazz {
     @Column
     String name;
 
-    @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL) // 创建一对多映射关系，值是对方的外键对应的属性
+    @OneToMany(mappedBy = "clazz", cascade = CascadeType.ALL, fetch = FetchType.EAGER) // 创建一对多映射关系，值是对方的外键对应的属性
     private List<Student> students;
 }
